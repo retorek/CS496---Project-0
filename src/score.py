@@ -8,7 +8,7 @@ ITEMS_PATH = Path("data/items.json")
 RESULT_FILES = {
     #"top": Path("results/top_results.json"),
     "cheap": Path("results/cheap_results.json"),
-    "local": Path("results/local_results.json"),
+    # "local": Path("results/local_results.json"),
 }
 
 

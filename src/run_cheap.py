@@ -11,7 +11,7 @@ from google.genai import types
 
 PROMPT_PATH = Path("prompt/prompt.txt")
 ITEMS_PATH = Path("data/items.json")
-RESULTS_PATH = Path("results/cheap_results.json")
+RESULTS_PATH = Path("results/cheap_results1.json")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
@@ -148,7 +148,7 @@ def run_cheap():
                 ensure_ascii=False,
             )
 
-        time.sleep(50)  # Sleep for 50 seconds to avoid rate limits
+        time.sleep(10)  # Sleep for 10 seconds to avoid rate limits
 
     print(
         f"Saved {len(results)} results to {RESULTS_PATH}"
