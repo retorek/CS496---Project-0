@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "specification": "Match exactly 5 digits.",
+    "expected_regex": "^\\d{5}$",
+    "must_match": ["12345", "00000", "98765", "10293", "55555"],
+    "must_not_match": ["1234", "123456", "1234a", "12 345", "123-45"]
+  },
+  {
+    "id": 2,
+    "specification": "Match exactly 4 uppercase letters.",
+    "expected_regex": "^[A-Z]{4}$",
+    "must_match": ["ABCD", "TEST", "AAAA", "ZXCV", "QWER"],
+    "must_not_match": ["ABC", "ABCDE", "AbCD", "AB12", "AB C"]
+  },
+  {
+    "id": 3,
+    "specification": "Match exactly 6 lowercase letters.",
+    "expected_regex": "^[a-z]{6}$",
+    "must_match": ["abcdef", "python", "banana", "orange", "zzzzzz"],
+    "must_not_match": ["abcde", "abcdefg", "ABCdef", "abc123", "abc def"]
+  },
+  {
+    "id": 4,
+    "specification": "Match a username containing 3 to 15 characters, using only letters, digits, and underscores.",
+    "expected_regex": "^[A-Za-z0-9_]{3,15}$",
+    "must_match": ["abc", "john_doe", "user123", "A_B_C", "test_user_01"],
+    "must_not_match": ["ab", "abcdefghijklmnop", "john-doe", "john doe", "user!"]
+  },
+  {
+    "id": 5,
+    "specification": "Match a string starting with A followed by exactly 3 digits.",
+    "expected_regex": "^A\\d{3}$",
+    "must_match": ["A123", "A000", "A999", "A456", "A010"],
+    "must_not_match": ["B123", "A12", "A1234", "a123", "AA12"]
+  },
+  {
+    "id": 6,
+    "specification": "Match a capital letter followed by exactly 4 lowercase letters.",
+    "expected_regex": "^[A-Z][a-z]{4}$",
+    "must_match": ["Alice", "David", "Peter", "James", "Smith"],
+    "must_not_match": ["alice", "ALICE", "Ali", "Alice1", "AlicE"]
+  },
+  {
+    "id": 7,
+    "specification": "Match a hexadecimal color in the form # followed by exactly 6 hexadecimal characters.",
+    "expected_regex": "^#[0-9A-Fa-f]{6}$",
+    "must_match": ["#FFFFFF", "#000000", "#ff00aa", "#12AB9f", "#123456"],
+    "must_not_match": ["FFFFFF", "#FFF", "#1234567", "#GGGGGG", "#12 456"]
+  },
+  {
+    "id": 8,
+    "specification": "Match a hexadecimal number beginning with 0x followed by one or more hexadecimal digits.",
+    "expected_regex": "^0x[0-9A-Fa-f]+$",
+    "must_match": ["0x1", "0xFF", "0xabcdef", "0x123ABC", "0x00"],
+    "must_not_match": ["1xFF", "0XFF", "0x", "0xGHI", "0x12 34"]
+  },
+  {
+    "id": 9,
+    "specification": "Match a positive integer with no leading zeros, except 0 itself.",
+    "expected_regex": "^(0|[1-9]\\d*)$",
+    "must_match": ["0", "1", "10", "123", "99999"],
+    "must_not_match": ["00", "01", "001", "-1", "+1"]
+  },
+  {
+    "id": 10,
+    "specification": "Match an integer that may optionally begin with + or -.",
+    "expected_regex": "^[+-]?\\d+$",
+    "must_match": ["0", "123", "-123", "+123", "-999"],
+    "must_not_match": ["--1", "++1", "+-1", "12.3", "abc"]
+  },
+  {
+    "id": 11,
+    "specification": "Match a decimal number with exactly two digits after the decimal point.",
+    "expected_regex": "^\\d+\\.\\d{2}$",
+    "must_match": ["1.00", "12.34", "0.99", "123.45", "9.10"],
+    "must_not_match": ["1", "1.2", "1.234", ".50", "-1.00"]
+  },
+  {
+    "id": 12,
+    "specification": "Match a number with an optional decimal part containing one or two digits.",
+    "expected_regex": "^\\d+(\\.\\d{1,2})?$",
+    "must_match": ["1", "10", "1.2", "1.23", "999.99"],
+    "must_not_match": ["1.", ".2", "1.234", "-1.2", "1.2345"]
+  },
+  {
+    "id": 13,
+    "specification": "Match a date in YYYY-MM-DD format.",
+    "expected_regex": "^\\d{4}-\\d{2}-\\d{2}$",
+    "must_match": ["2026-01-01", "2000-12-31", "1999-05-20", "2025-10-15", "2030-09-09"],
+    "must_not_match": ["26-01-01", "2026/01/01", "2026-1-01", "20260101", "2026-01-1"]
+  },
+  {
+    "id": 14,
+    "specification": "Match a date in DD/MM/YYYY format.",
+    "expected_regex": "^\\d{2}/\\d{2}/\\d{4}$",
+    "must_match": ["01/01/2026", "31/12/2000", "15/05/1999", "09/09/2030", "25/10/2025"],
+    "must_not_match": ["1/01/2026", "01-01-2026", "01/1/2026", "01/01/26", "2026/01/01"]
+  },
+  {
+    "id": 15,
+    "specification": "Match a 24-hour time in HH:MM format, with hours 00-23 and minutes 00-59.",
+    "expected_regex": "^([01]\\d|2[0-3]):[0-5]\\d$",
+    "must_match": ["00:00", "09:30", "12:45", "23:59", "18:05"],
+    "must_not_match": ["24:00", "12:60", "9:30", "25:10", "12-30"]
+  },
+  {
+    "id": 16,
+    "specification": "Match a 24-hour time in HH:MM:SS format.",
+    "expected_regex": "^([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d$",
+    "must_match": ["00:00:00", "12:30:45", "23:59:59", "09:05:10", "18:20:00"],
+    "must_not_match": ["24:00:00", "12:60:00", "12:30", "1:30:00", "12:30:60"]
+  },
+  {
+    "id": 17,
+    "specification": "Match a simple email address with a username, @, domain, and a two-or-more-letter extension.",
+    "expected_regex": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+    "must_match": ["a@example.com", "john.doe@gmail.com", "user123@test.org", "a+b@domain.co", "test_user@mail.net"],
+    "must_not_match": ["user@", "@example.com", "user@example", "user@example.c", "user example@test.com"]
+  },
+  {
+    "id": 18,
+    "specification": "Match a URL beginning with http:// or https:// followed by a domain name.",
+    "expected_regex": "^https?://[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+    "must_match": ["http://example.com", "https://example.com", "https://google.org", "http://test.net", "https://sub.domain.com"],
+    "must_not_match": ["ftp://example.com", "example.com", "http://example", "https//example.com", "http://"]
+  },
+  {
+    "id": 19,
+    "specification": "Match a string beginning with www. followed by a domain name and extension.",
+    "expected_regex": "^www\\.[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+    "must_match": ["www.example.com", "www.google.org", "www.test.net", "www.example.co.uk", "www.site.info"],
+    "must_not_match": ["example.com", "http://www.example.com", "www.example", "ww.example.com", "www."]
+  },
+  {
+    "id": 20,
+    "specification": "Match exactly 5 digits representing a postal code.",
+    "expected_regex": "^\\d{5}$",
+    "must_match": ["10000", "75001", "20000", "69000", "30000"],
+    "must_not_match": ["1000", "100000", "7500A", "75 001", "750-01"]
+  },
+  {
+    "id": 21,
+    "specification": "Match a Tunisian-style phone number beginning with 2, 4, 5, 7, or 9 followed by exactly 7 digits.",
+    "expected_regex": "^[24579]\\d{7}$",
+    "must_match": ["20123456", "40123456", "50123456", "70123456", "90123456"],
+    "must_not_match": ["10123456", "30123456", "80123456", "5012345", "501234567"]
+  },
+  {
+    "id": 22,
+    "specification": "Match a Tunisian phone number written as +216 followed by a space and 8 digits.",
+    "expected_regex": "^\\+216 \\d{8}$",
+    "must_match": ["+216 20123456", "+216 50123456", "+216 70123456", "+216 90123456", "+216 40123456"],
+    "must_not_match": ["216 20123456", "+21620123456", "+216-20123456", "+216 1234567", "+216 123456789"]
+  },
+  {
+    "id": 23,
+    "specification": "Match a string containing only alphabetic characters and spaces.",
+    "expected_regex": "^[A-Za-z ]+$",
+    "must_match": ["hello", "Hello World", "John Smith", "ABC xyz", "a b c"],
+    "must_not_match": ["hello123", "hello-world", "hello_world", "hello!", "hello@email"]
+  },
+  {
+    "id": 24,
+    "specification": "Match a string containing only letters, digits, and spaces.",
+    "expected_regex": "^[A-Za-z0-9 ]+$",
+    "must_match": ["hello", "Hello 123", "ABC xyz 42", "12345", "a b 1"],
+    "must_not_match": ["hello!", "hello-world", "hello_world", "test@email", "12.34"]
+  },
+  {
+    "id": 25,
+    "specification": "Match a string that starts and ends with a letter and may contain letters, digits, hyphens, or underscores between them.",
+    "expected_regex": "^[A-Za-z][A-Za-z0-9_-]*[A-Za-z]$",
+    "must_match": ["abc", "a1b", "hello-world", "user_123", "A-test_1B"],
+    "must_not_match": ["1abc", "abc1", "_abc", "abc_", "a@b"]
+  },
+  {
+    "id": 26,
+    "specification": "Match a filename ending in .txt with valid letters, digits, underscores, or hyphens before the extension.",
+    "expected_regex": "^[A-Za-z0-9_-]+\\.txt$",
+    "must_match": ["file.txt", "test123.txt", "my_file.txt", "my-file.txt", "README.txt"],
+    "must_not_match": ["file.pdf", ".txt", "file.txt.bak", "my file.txt", "file.TXT"]
+  },
+  {
+    "id": 27,
+    "specification": "Match a filename ending in either .jpg or .png.",
+    "expected_regex": "^[A-Za-z0-9_-]+\\.(jpg|png)$",
+    "must_match": ["image.jpg", "photo.png", "test123.jpg", "my-image.png", "logo_1.jpg"],
+    "must_not_match": ["image.gif", "image.jpeg", ".jpg", "my image.jpg", "image.JPG"]
+  },
+  {
+    "id": 28,
+    "specification": "Match a filename ending in .jpg, .jpeg, or .png.",
+    "expected_regex": "^[A-Za-z0-9_-]+\\.(jpg|jpeg|png)$",
+    "must_match": ["image.jpg", "photo.jpeg", "test.png", "my-image.jpeg", "logo_1.jpg"],
+    "must_not_match": ["image.gif", "image.pdf", ".jpg", "my image.png", "image.JPG"]
+  },
+  {
+    "id": 29,
+    "specification": "Match exactly one uppercase letter, two digits, and three lowercase letters.",
+    "expected_regex": "^[A-Z]\\d{2}[a-z]{3}$",
+    "must_match": ["A12abc", "B99xyz", "Z00aaa", "M45def", "Q10qwe"],
+    "must_not_match": ["a12abc", "A1abc", "A123abc", "AB12abc", "A12ABC"]
+  },
+  {
+    "id": 30,
+    "specification": "Match a product code consisting of three uppercase letters, a hyphen, and four digits.",
+    "expected_regex": "^[A-Z]{3}-\\d{4}$",
+    "must_match": ["ABC-1234", "XYZ-0000", "PRO-9876", "AAA-1111", "QWE-4567"],
+    "must_not_match": ["AB-1234", "abcd-1234", "ABC1234", "ABC-123", "ABC_1234"]
+  },
+  {
+    "id": 31,
+    "specification": "Match an identifier beginning with ID- followed by exactly 6 digits.",
+    "expected_regex": "^ID-\\d{6}$",
+    "must_match": ["ID-123456", "ID-000000", "ID-987654", "ID-123000", "ID-555555"],
+    "must_not_match": ["id-123456", "ID123456", "ID-12345", "ID-1234567", "ID-ABCDEF"]
+  },
+  {
+    "id": 32,
+    "specification": "Match a string beginning with USER_ followed by 4 to 8 lowercase letters or digits.",
+    "expected_regex": "^USER_[a-z0-9]{4,8}$",
+    "must_match": ["USER_test", "USER_1234", "USER_user01", "USER_a123", "USER_abcdefgh"],
+    "must_not_match": ["user_test", "USER_abc", "USER_abcdefghi", "USER_Test1", "USER_test-1"]
+  },
+  {
+    "id": 33,
+    "specification": "Match one or more alphabetic words separated by single spaces.",
+    "expected_regex": "^[A-Za-z]+( [A-Za-z]+)*$",
+    "must_match": ["hello", "hello world", "John Smith", "one two three", "a b c"],
+    "must_not_match": [" hello", "hello ", "hello  world", "hello123", "hello-world"]
+  },
+  {
+    "id": 34,
+    "specification": "Match a string containing the word 'error' anywhere, ignoring case.",
+    "expected_regex": "(?i)error",
+    "must_match": ["error", "ERROR", "An error occurred", "Error message", "fatal ERROR found"],
+    "must_not_match": ["warning", "failure", "err", "errorss", "eror"]
+  },
+  {
+    "id": 35,
+    "specification": "Match a string beginning with ERROR: followed by optional spaces and then some text.",
+    "expected_regex": "^ERROR:\\s*.+$",
+    "must_match": ["ERROR: problem", "ERROR:problem", "ERROR:   failure", "ERROR: database error", "ERROR: x"],
+    "must_not_match": ["error: problem", "ERROR:", "ERROR: ", "WARNING: problem", "ERROR problem"]
+  },
+  {
+    "id": 36,
+    "specification": "Match exactly three alphabetic words separated by single spaces.",
+    "expected_regex": "^[A-Za-z]+ [A-Za-z]+ [A-Za-z]+$",
+    "must_match": ["one two three", "John Doe Smith", "a b c", "hello world test", "Red Green Blue"],
+    "must_not_match": ["one two", "one two three four", "one  two three", "one2 two three", "one-two three four"]
+  },
+  {
+    "id": 37,
+    "specification": "Match one or more digits followed by a hyphen and one or more letters.",
+    "expected_regex": "^\\d+-[A-Za-z]+$",
+    "must_match": ["1-a", "123-abc", "999-XYZ", "42-test", "2026-year"],
+    "must_not_match": ["-abc", "123", "abc-123", "12-abc123", "12_abc"]
+  },
+  {
+    "id": 38,
+    "specification": "Match a version number in major.minor.patch format, with one or more digits in each component.",
+    "expected_regex": "^\\d+\\.\\d+\\.\\d+$",
+    "must_match": ["1.0.0", "2.5.10", "10.20.30", "0.1.2", "2026.9.15"],
+    "must_not_match": ["1.0", "1.0.0.1", "v1.0.0", "1-0-0", "1.a.0"]
+  },
+  {
+    "id": 39,
+    "specification": "Match a semantic version beginning with v followed by three numeric components separated by periods.",
+    "expected_regex": "^v\\d+\\.\\d+\\.\\d+$",
+    "must_match": ["v1.0.0", "v2.5.10", "v10.20.30", "v0.1.2", "v2026.9.15"],
+    "must_not_match": ["1.0.0", "V1.0.0", "v1.0", "v1-0-0", "v1.a.0"]
+  },
+  {
+    "id": 40,
+    "specification": "Match a Git branch name beginning with feature/ followed by lowercase letters, digits, hyphens, or underscores.",
+    "expected_regex": "^feature/[a-z0-9_-]+$",
+    "must_match": ["feature/login", "feature/add-button", "feature/user_123", "feature/test1", "feature/new_api"],
+    "must_not_match": ["Feature/login", "feature/", "feature/Login", "feature/new api", "feature/new.api"]
+  },
+  {
+    "id": 41,
+    "specification": "Match a Git branch name beginning with bugfix/ followed by lowercase letters, digits, or hyphens.",
+    "expected_regex": "^bugfix/[a-z0-9-]+$",
+    "must_match": ["bugfix/login", "bugfix/fix-auth", "bugfix/error123", "bugfix/test-1", "bugfix/null-pointer"],
+    "must_not_match": ["Bugfix/login", "bugfix/", "bugfix/Fix", "bugfix/test_1", "bugfix/test fix"]
+  },
+  {
+    "id": 42,
+    "specification": "Match a percentage from 0 to 100 with an optional decimal part of one or two digits, followed by %.",
+    "expected_regex": "^(100|[0-9]{1,2}(\\.\\d{1,2})?)%$",
+    "must_match": ["0%", "50%", "99%", "100%", "12.5%", "99.99%"],
+    "must_not_match": ["101%", "-1%", "100.1%", "12.345%", "abc%"]
+  },
+  {
+    "id": 43,
+    "specification": "Match a temperature consisting of an optional minus sign, one or more digits, an optional decimal part, and C.",
+    "expected_regex": "^-?\\d+(\\.\\d+)?C$",
+    "must_match": ["0C", "25C", "-10C", "25.5C", "-3.75C"],
+    "must_not_match": ["25", "25F", "C25", "--10C", "25.C"]
+  },
+  {
+    "id": 44,
+    "specification": "Match a price beginning with $ followed by a number with exactly two decimal digits.",
+    "expected_regex": "^\\$\\d+\\.\\d{2}$",
+    "must_match": ["$1.00", "$10.50", "$999.99", "$0.99", "$12345.67"],
+    "must_not_match": ["1.00", "$1", "$1.2", "$1.234", "€10.00"]
+  },
+  {
+    "id": 45,
+    "specification": "Match a price followed by the currency code TND, with one or two decimal digits.",
+    "expected_regex": "^\\d+(\\.\\d{1,2})? TND$",
+    "must_match": ["10 TND", "10.5 TND", "10.50 TND", "0.99 TND", "1234 TND"],
+    "must_not_match": ["10TND", "10. TND", "10.123 TND", "-10 TND", "10 USD"]
+  },
+  {
+    "id": 46,
+    "specification": "Match one or more comma-separated positive integers with no spaces.",
+    "expected_regex": "^\\d+(,\\d+)*$",
+    "must_match": ["1", "1,2", "10,20,30", "100,200,300", "1,22,333,4444"],
+    "must_not_match": ["1,", ",1", "1, 2", "1,,2", "a,2"]
+  },
+  {
+    "id": 47,
+    "specification": "Match lowercase words separated by commas and optional spaces.",
+    "expected_regex": "^[a-z]+(,\\s*[a-z]+)*$",
+    "must_match": ["apple", "apple,banana", "apple, banana", "one,two,three", "red, green, blue"],
+    "must_not_match": ["Apple,banana", "apple,", ",apple", "apple,,banana", "apple, Banana"]
+  },
+  {
+    "id": 48,
+    "specification": "Match a string containing only hexadecimal characters with a length between 4 and 8.",
+    "expected_regex": "^[0-9A-Fa-f]{4,8}$",
+    "must_match": ["abcd", "1234", "ABCDEF", "12345678", "a1B2c3"],
+    "must_not_match": ["abc", "abcdefghi", "123G", "12 34", "#1234"]
+  },
+  {
+    "id": 49,
+    "specification": "Match a string beginning with # followed by exactly 3 hexadecimal characters.",
+    "expected_regex": "^#[0-9A-Fa-f]{3}$",
+    "must_match": ["#FFF", "#000", "#abc", "#123", "#A1F"],
+    "must_not_match": ["FFF", "#FFFF", "#GGG", "#12", "##FFF"]
+  },
+  {
+    "id": 50,
+    "specification": "Match a simple IPv4 address consisting of four groups of one to three digits separated by periods.",
+    "expected_regex": "^\\d{1,3}(\\.\\d{1,3}){3}$",
+    "must_match": ["127.0.0.1", "192.168.1.1", "10.0.0.1", "8.8.8.8", "255.255.255.255"],
+    "must_not_match": ["127.0.0", "127.0.0.1.1", "127-0-0-1", "127.0.0.a", "127.0.0.0000"]
+  }
+]
