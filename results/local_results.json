@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "output": "^\\d{5}$",
+    "latency_ms": 6877.43,
+    "input_tokens": 179,
+    "output_tokens": 6,
+    "total_tokens": 185,
+    "status": "success"
+  },
+  {
+    "id": 2,
+    "output": "^[A-Z]{4}$",
+    "latency_ms": 990.06,
+    "input_tokens": 180,
+    "output_tokens": 7,
+    "total_tokens": 187,
+    "status": "success"
+  },
+  {
+    "id": 3,
+    "output": "^[a-z]{6}$",
+    "latency_ms": 1040.28,
+    "input_tokens": 180,
+    "output_tokens": 7,
+    "total_tokens": 187,
+    "status": "success"
+  },
+  {
+    "id": 4,
+    "output": "^[a-zA-Z0-9_]{3,15}$",
+    "latency_ms": 2655.92,
+    "input_tokens": 193,
+    "output_tokens": 14,
+    "total_tokens": 207,
+    "status": "success"
+  },
+  {
+    "id": 5,
+    "output": "A[A-Z]\\d{3}",
+    "latency_ms": 1781.26,
+    "input_tokens": 186,
+    "output_tokens": 9,
+    "total_tokens": 195,
+    "status": "success"
+  },
+  {
+    "id": 6,
+    "output": "[A-Z][a-z]{4}",
+    "latency_ms": 1681.45,
+    "input_tokens": 185,
+    "output_tokens": 9,
+    "total_tokens": 194,
+    "status": "success"
+  },
+  {
+    "id": 7,
+    "output": "`^#([0-9A-Fa-f]{6})$`",
+    "latency_ms": 2974.35,
+    "input_tokens": 189,
+    "output_tokens": 17,
+    "total_tokens": 206,
+    "status": "success"
+  },
+  {
+    "id": 8,
+    "output": "0x[0-9A-Fa-f]+",
+    "latency_ms": 2230.18,
+    "input_tokens": 190,
+    "output_tokens": 12,
+    "total_tokens": 202,
+    "status": "success"
+  },
+  {
+    "id": 9,
+    "output": "^\\d$|^[1-9]\\d*",
+    "latency_ms": 2255.41,
+    "input_tokens": 187,
+    "output_tokens": 12,
+    "total_tokens": 199,
+    "status": "success"
+  },
+  {
+    "id": 10,
+    "output": "^\\+?\\-?\\d+$",
+    "latency_ms": 1552.32,
+    "input_tokens": 184,
+    "output_tokens": 8,
+    "total_tokens": 192,
+    "status": "success"
+  },
+  {
+    "id": 11,
+    "output": "\\d{1,2}\\.\\d{2}",
+    "latency_ms": 2214.25,
+    "input_tokens": 186,
+    "output_tokens": 12,
+    "total_tokens": 198,
+    "status": "success"
+  },
+  {
+    "id": 12,
+    "output": "^\\d{1,2}(?:\\.\\d{1,2})?$",
+    "latency_ms": 3101.77,
+    "input_tokens": 187,
+    "output_tokens": 18,
+    "total_tokens": 205,
+    "status": "success"
+  },
+  {
+    "id": 13,
+    "output": "\\d{4}-\\d{2}-\\d{2}",
+    "latency_ms": 2543.34,
+    "input_tokens": 182,
+    "output_tokens": 16,
+    "total_tokens": 198,
+    "status": "success"
+  },
+  {
+    "id": 14,
+    "output": "\\d{2}/\\d{2}/\\d{4}",
+    "latency_ms": 2420.77,
+    "input_tokens": 182,
+    "output_tokens": 15,
+    "total_tokens": 197,
+    "status": "success"
+  },
+  {
+    "id": 15,
+    "output": "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+    "latency_ms": 5169.43,
+    "input_tokens": 198,
+    "output_tokens": 29,
+    "total_tokens": 227,
+    "status": "success"
+  },
+  {
+    "id": 16,
+    "output": "^(?:[0-9]{2}:){2}[0-9]{2}$",
+    "latency_ms": 3028.78,
+    "input_tokens": 187,
+    "output_tokens": 19,
+    "total_tokens": 206,
+    "status": "success"
+  },
+  {
+    "id": 17,
+    "output": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    "latency_ms": 4854.98,
+    "input_tokens": 194,
+    "output_tokens": 29,
+    "total_tokens": 223,
+    "status": "success"
+  },
+  {
+    "id": 18,
+    "output": "^(http|https)://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    "latency_ms": 4081.0,
+    "input_tokens": 189,
+    "output_tokens": 24,
+    "total_tokens": 213,
+    "status": "success"
+  },
+  {
+    "id": 19,
+    "output": "\\www\\.[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+    "latency_ms": 3662.02,
+    "input_tokens": 188,
+    "output_tokens": 21,
+    "total_tokens": 209,
+    "status": "success"
+  },
+  {
+    "id": 20,
+    "output": "^\\d{5}$",
+    "latency_ms": 1300.43,
+    "input_tokens": 183,
+    "output_tokens": 6,
+    "total_tokens": 189,
+    "status": "success"
+  },
+  {
+    "id": 21,
+    "output": "^(2|4|5|7|9)\\d{7}$",
+    "latency_ms": 2288.42,
+    "input_tokens": 204,
+    "output_tokens": 16,
+    "total_tokens": 220,
+    "status": "success"
+  },
+  {
+    "id": 22,
+    "output": "^\\+216 \\d{8}$",
+    "latency_ms": 1794.18,
+    "input_tokens": 192,
+    "output_tokens": 9,
+    "total_tokens": 201,
+    "status": "success"
+  },
+  {
+    "id": 23,
+    "output": "^[a-zA-Z\\s]*$",
+    "latency_ms": 1557.3,
+    "input_tokens": 184,
+    "output_tokens": 8,
+    "total_tokens": 192,
+    "status": "success"
+  },
+  {
+    "id": 24,
+    "output": "^[a-zA-Z0-9\\s]*$",
+    "latency_ms": 1920.81,
+    "input_tokens": 185,
+    "output_tokens": 11,
+    "total_tokens": 196,
+    "status": "success"
+  },
+  {
+    "id": 25,
+    "output": "^[a-zA-Z].*?[a-zA-Z]$",
+    "latency_ms": 2635.33,
+    "input_tokens": 199,
+    "output_tokens": 12,
+    "total_tokens": 211,
+    "status": "success"
+  },
+  {
+    "id": 26,
+    "output": "^[a-zA-Z0-9_-]+\\.txt$",
+    "latency_ms": 2869.5,
+    "input_tokens": 196,
+    "output_tokens": 13,
+    "total_tokens": 209,
+    "status": "success"
+  },
+  {
+    "id": 27,
+    "output": "\\.(jpg|png)$",
+    "latency_ms": 1382.67,
+    "input_tokens": 185,
+    "output_tokens": 7,
+    "total_tokens": 192,
+    "status": "success"
+  },
+  {
+    "id": 28,
+    "output": "\\.(jpg|jpeg|png)$",
+    "latency_ms": 1679.58,
+    "input_tokens": 188,
+    "output_tokens": 9,
+    "total_tokens": 197,
+    "status": "success"
+  },
+  {
+    "id": 29,
+    "output": "^[A-Z][0-9]{2}[a-z]{3}$",
+    "latency_ms": 2841.29,
+    "input_tokens": 187,
+    "output_tokens": 16,
+    "total_tokens": 203,
+    "status": "success"
+  },
+  {
+    "id": 30,
+    "output": "^[A-Z]{3}-\\d{4}$",
+    "latency_ms": 2466.19,
+    "input_tokens": 191,
+    "output_tokens": 12,
+    "total_tokens": 203,
+    "status": "success"
+  },
+  {
+    "id": 31,
+    "output": "ID-\\d{6}",
+    "latency_ms": 1696.75,
+    "input_tokens": 187,
+    "output_tokens": 7,
+    "total_tokens": 194,
+    "status": "success"
+  },
+  {
+    "id": 32,
+    "output": "USER_[a-z0-9]{4,8}",
+    "latency_ms": 3039.86,
+    "input_tokens": 192,
+    "output_tokens": 13,
+    "total_tokens": 205,
+    "status": "success"
+  },
+  {
+    "id": 33,
+    "output": "\\w+\\s+\\w+",
+    "latency_ms": 1720.13,
+    "input_tokens": 185,
+    "output_tokens": 8,
+    "total_tokens": 193,
+    "status": "success"
+  },
+  {
+    "id": 34,
+    "output": "error|i",
+    "latency_ms": 1052.43,
+    "input_tokens": 187,
+    "output_tokens": 3,
+    "total_tokens": 190,
+    "status": "success"
+  },
+  {
+    "id": 35,
+    "output": "ERROR:\\s*.*",
+    "latency_ms": 1488.9,
+    "input_tokens": 189,
+    "output_tokens": 6,
+    "total_tokens": 195,
+    "status": "success"
+  },
+  {
+    "id": 36,
+    "output": "\\w{3} \\w{3} \\w{3}",
+    "latency_ms": 2854.39,
+    "input_tokens": 184,
+    "output_tokens": 16,
+    "total_tokens": 200,
+    "status": "success"
+  },
+  {
+    "id": 37,
+    "output": "\\d+-[a-zA-Z]+",
+    "latency_ms": 1804.37,
+    "input_tokens": 189,
+    "output_tokens": 8,
+    "total_tokens": 197,
+    "status": "success"
+  },
+  {
+    "id": 38,
+    "output": "\\d+\\.\\d+\\.\\d+",
+    "latency_ms": 2032.38,
+    "input_tokens": 193,
+    "output_tokens": 9,
+    "total_tokens": 202,
+    "status": "success"
+  },
+  {
+    "id": 39,
+    "output": "^v\\d+\\.\\d+\\.\\d+$",
+    "latency_ms": 2314.17,
+    "input_tokens": 189,
+    "output_tokens": 11,
+    "total_tokens": 200,
+    "status": "success"
+  },
+  {
+    "id": 40,
+    "output": "^feature/[a-z0-9_-]+$",
+    "latency_ms": 2565.43,
+    "input_tokens": 196,
+    "output_tokens": 11,
+    "total_tokens": 207,
+    "status": "success"
+  },
+  {
+    "id": 41,
+    "output": "^bugfix/[a-z0-9-]+$",
+    "latency_ms": 2439.17,
+    "input_tokens": 195,
+    "output_tokens": 12,
+    "total_tokens": 207,
+    "status": "success"
+  },
+  {
+    "id": 42,
+    "output": "\\d{1,2}(?:\\.\\d{1,2})?\\%",
+    "latency_ms": 3403.99,
+    "input_tokens": 196,
+    "output_tokens": 18,
+    "total_tokens": 214,
+    "status": "success"
+  },
+  {
+    "id": 43,
+    "output": "-?\\d+(?:\\.\\d+)?C",
+    "latency_ms": 2522.3,
+    "input_tokens": 196,
+    "output_tokens": 12,
+    "total_tokens": 208,
+    "status": "success"
+  },
+  {
+    "id": 44,
+    "output": "\\$\\d{2}\\.\\d{2}",
+    "latency_ms": 2402.77,
+    "input_tokens": 189,
+    "output_tokens": 12,
+    "total_tokens": 201,
+    "status": "success"
+  },
+  {
+    "id": 45,
+    "output": "^\\d+(?:\\.\\d{1,2})? TND$",
+    "latency_ms": 3179.82,
+    "input_tokens": 191,
+    "output_tokens": 17,
+    "total_tokens": 208,
+    "status": "success"
+  },
+  {
+    "id": 46,
+    "output": "\\d+(?:,\\d+)+",
+    "latency_ms": 1814.98,
+    "input_tokens": 185,
+    "output_tokens": 9,
+    "total_tokens": 194,
+    "status": "success"
+  },
+  {
+    "id": 47,
+    "output": "\\w+(?: \\w+)*,",
+    "latency_ms": 2023.78,
+    "input_tokens": 183,
+    "output_tokens": 10,
+    "total_tokens": 193,
+    "status": "success"
+  },
+  {
+    "id": 48,
+    "output": "^[0-9A-Fa-f]{4,8}$",
+    "latency_ms": 2744.76,
+    "input_tokens": 190,
+    "output_tokens": 14,
+    "total_tokens": 204,
+    "status": "success"
+  },
+  {
+    "id": 49,
+    "output": "^#([0-9A-Fa-f]{3})",
+    "latency_ms": 2527.01,
+    "input_tokens": 187,
+    "output_tokens": 14,
+    "total_tokens": 201,
+    "status": "success"
+  },
+  {
+    "id": 50,
+    "output": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "latency_ms": 5026.34,
+    "input_tokens": 192,
+    "output_tokens": 28,
+    "total_tokens": 220,
+    "status": "success"
+  }
+]

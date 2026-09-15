@@ -3,18 +3,14 @@ import os
 import time
 from pathlib import Path
 
-import requests
+import ollama
 
 
 PROMPT_PATH = Path("prompt/prompt.txt")
 ITEMS_PATH = Path("data/items.json")
 RESULTS_PATH = Path("results/local_results.json")
 
-MODEL = os.environ["LOCAL_MODEL"]
-OLLAMA_URL = os.environ.get(
-    "OLLAMA_URL",
-    "http://localhost:11434/api/chat",
-)
+MODEL = "llama3.1:8b"
 
 
 def load_prompt():
@@ -27,7 +23,10 @@ def load_items():
 
 
 def build_prompt(prompt_template, specification):
-    return prompt_template.replace("{specification}", specification)
+    return prompt_template.replace(
+        "{specification}",
+        specification,
+    )
 
 
 def run_local():
@@ -45,40 +44,33 @@ def run_local():
         start = time.perf_counter()
 
         try:
-            response = requests.post(
-                OLLAMA_URL,
-                json={
-                    "model": MODEL,
-                    "messages": [
-                        {
-                            "role": "user",
-                            "content": prompt,
-                        }
-                    ],
-                    "stream": False,
-                    "options": {
-                        "temperature": 0,
-                    },
+            response = ollama.chat(
+                model=MODEL,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                options={
+                    "temperature": 0,
                 },
-                timeout=120,
             )
 
-            response.raise_for_status()
-            data = response.json()
-
             latency_ms = (time.perf_counter() - start) * 1000
-            output = data["message"]["content"].strip()
+
+            output = response.message.content.strip()
+
+            input_tokens = response.prompt_eval_count or 0
+            output_tokens = response.eval_count or 0
 
             results.append({
                 "id": item["id"],
                 "output": output,
                 "latency_ms": round(latency_ms, 2),
-                "input_tokens": data.get("prompt_eval_count", 0),
-                "output_tokens": data.get("eval_count", 0),
-                "total_tokens": (
-                    data.get("prompt_eval_count", 0)
-                    + data.get("eval_count", 0)
-                ),
+                "input_tokens": input_tokens,
+                "output_tokens": output_tokens,
+                "total_tokens": input_tokens + output_tokens,
                 "status": "success",
             })
 
@@ -99,7 +91,12 @@ def run_local():
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     with RESULTS_PATH.open("w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+        json.dump(
+            results,
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
 
     print(f"Saved {len(results)} results to {RESULTS_PATH}")
 
