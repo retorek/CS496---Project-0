@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "correct": true,
+    "reason": "correct",
+    "output": "^\\d{5}$"
+  },
+  {
+    "id": 2,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[A-Z]{4}$"
+  },
+  {
+    "id": 3,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-z]{6}$"
+  },
+  {
+    "id": 4,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-zA-Z0-9_]{3,15}$"
+  },
+  {
+    "id": 5,
+    "correct": false,
+    "reason": "failed_must_match:A123",
+    "output": "A[A-Z]\\d{3}"
+  },
+  {
+    "id": 6,
+    "correct": false,
+    "reason": "failed_must_not_match:Alice1",
+    "output": "[A-Z][a-z]{4}"
+  },
+  {
+    "id": 7,
+    "correct": false,
+    "reason": "failed_must_match:#FFFFFF",
+    "output": "`^#([0-9A-Fa-f]{6})$`"
+  },
+  {
+    "id": 8,
+    "correct": false,
+    "reason": "failed_must_not_match:0x12 34",
+    "output": "0x[0-9A-Fa-f]+"
+  },
+  {
+    "id": 9,
+    "correct": true,
+    "reason": "correct",
+    "output": "^\\d$|^[1-9]\\d*"
+  },
+  {
+    "id": 10,
+    "correct": false,
+    "reason": "failed_must_not_match:+-1",
+    "output": "^\\+?\\-?\\d+$"
+  },
+  {
+    "id": 11,
+    "correct": false,
+    "reason": "failed_must_not_match:1.234",
+    "output": "\\d{1,2}\\.\\d{2}"
+  },
+  {
+    "id": 12,
+    "correct": false,
+    "reason": "failed_must_match:999.99",
+    "output": "^\\d{1,2}(?:\\.\\d{1,2})?$"
+  },
+  {
+    "id": 13,
+    "correct": true,
+    "reason": "correct",
+    "output": "\\d{4}-\\d{2}-\\d{2}"
+  },
+  {
+    "id": 14,
+    "correct": true,
+    "reason": "correct",
+    "output": "\\d{2}/\\d{2}/\\d{4}"
+  },
+  {
+    "id": 15,
+    "correct": true,
+    "reason": "correct",
+    "output": "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
+  },
+  {
+    "id": 16,
+    "correct": false,
+    "reason": "failed_must_not_match:24:00:00",
+    "output": "^(?:[0-9]{2}:){2}[0-9]{2}$"
+  },
+  {
+    "id": 17,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  },
+  {
+    "id": 18,
+    "correct": true,
+    "reason": "correct",
+    "output": "^(http|https)://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  },
+  {
+    "id": 19,
+    "correct": false,
+    "reason": "failed_must_not_match:http://www.example.com",
+    "output": "\\www\\.[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+  },
+  {
+    "id": 20,
+    "correct": true,
+    "reason": "correct",
+    "output": "^\\d{5}$"
+  },
+  {
+    "id": 21,
+    "correct": true,
+    "reason": "correct",
+    "output": "^(2|4|5|7|9)\\d{7}$"
+  },
+  {
+    "id": 22,
+    "correct": true,
+    "reason": "correct",
+    "output": "^\\+216 \\d{8}$"
+  },
+  {
+    "id": 23,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-zA-Z\\s]*$"
+  },
+  {
+    "id": 24,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-zA-Z0-9\\s]*$"
+  },
+  {
+    "id": 25,
+    "correct": false,
+    "reason": "failed_must_match:user_123",
+    "output": "^[a-zA-Z].*?[a-zA-Z]$"
+  },
+  {
+    "id": 26,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[a-zA-Z0-9_-]+\\.txt$"
+  },
+  {
+    "id": 27,
+    "correct": false,
+    "reason": "failed_must_not_match:.jpg",
+    "output": "\\.(jpg|png)$"
+  },
+  {
+    "id": 28,
+    "correct": false,
+    "reason": "failed_must_not_match:.jpg",
+    "output": "\\.(jpg|jpeg|png)$"
+  },
+  {
+    "id": 29,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[A-Z][0-9]{2}[a-z]{3}$"
+  },
+  {
+    "id": 30,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[A-Z]{3}-\\d{4}$"
+  },
+  {
+    "id": 31,
+    "correct": false,
+    "reason": "failed_must_not_match:ID-1234567",
+    "output": "ID-\\d{6}"
+  },
+  {
+    "id": 32,
+    "correct": false,
+    "reason": "failed_must_not_match:USER_abcdefghi",
+    "output": "USER_[a-z0-9]{4,8}"
+  },
+  {
+    "id": 33,
+    "correct": false,
+    "reason": "failed_must_match:hello",
+    "output": "\\w+\\s+\\w+"
+  },
+  {
+    "id": 34,
+    "correct": false,
+    "reason": "failed_must_match:ERROR",
+    "output": "error|i"
+  },
+  {
+    "id": 35,
+    "correct": false,
+    "reason": "failed_must_not_match:ERROR:",
+    "output": "ERROR:\\s*.*"
+  },
+  {
+    "id": 36,
+    "correct": false,
+    "reason": "failed_must_match:a b c",
+    "output": "\\w{3} \\w{3} \\w{3}"
+  },
+  {
+    "id": 37,
+    "correct": false,
+    "reason": "failed_must_not_match:12-abc123",
+    "output": "\\d+-[a-zA-Z]+"
+  },
+  {
+    "id": 38,
+    "correct": false,
+    "reason": "failed_must_not_match:1.0.0.1",
+    "output": "\\d+\\.\\d+\\.\\d+"
+  },
+  {
+    "id": 39,
+    "correct": true,
+    "reason": "correct",
+    "output": "^v\\d+\\.\\d+\\.\\d+$"
+  },
+  {
+    "id": 40,
+    "correct": true,
+    "reason": "correct",
+    "output": "^feature/[a-z0-9_-]+$"
+  },
+  {
+    "id": 41,
+    "correct": true,
+    "reason": "correct",
+    "output": "^bugfix/[a-z0-9-]+$"
+  },
+  {
+    "id": 42,
+    "correct": false,
+    "reason": "failed_must_not_match:101%",
+    "output": "\\d{1,2}(?:\\.\\d{1,2})?\\%"
+  },
+  {
+    "id": 43,
+    "correct": false,
+    "reason": "failed_must_not_match:--10C",
+    "output": "-?\\d+(?:\\.\\d+)?C"
+  },
+  {
+    "id": 44,
+    "correct": false,
+    "reason": "failed_must_match:$1.00",
+    "output": "\\$\\d{2}\\.\\d{2}"
+  },
+  {
+    "id": 45,
+    "correct": true,
+    "reason": "correct",
+    "output": "^\\d+(?:\\.\\d{1,2})? TND$"
+  },
+  {
+    "id": 46,
+    "correct": false,
+    "reason": "failed_must_match:1",
+    "output": "\\d+(?:,\\d+)+"
+  },
+  {
+    "id": 47,
+    "correct": false,
+    "reason": "failed_must_match:apple",
+    "output": "\\w+(?: \\w+)*,"
+  },
+  {
+    "id": 48,
+    "correct": true,
+    "reason": "correct",
+    "output": "^[0-9A-Fa-f]{4,8}$"
+  },
+  {
+    "id": 49,
+    "correct": false,
+    "reason": "failed_must_not_match:#FFFF",
+    "output": "^#([0-9A-Fa-f]{3})"
+  },
+  {
+    "id": 50,
+    "correct": false,
+    "reason": "failed_must_not_match:127.0.0.1.1",
+    "output": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}"
+  }
+]
